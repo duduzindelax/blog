@@ -1,24 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Funcionalidade para Menu de Navegação Responsivo (Menu Hambúrguer) ---
+    // --- Funcionalidade para Menu de Navegação Responsivo ---
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
 
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // Melhora a acessibilidade para leitores de tela
             const isExpanded = mainNav.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
         });
     }
 
-    // --- 2. Carregamento Dinâmico de Posts na Página Inicial (index.html) ---
-    // Verifica se o elemento 'posts-container' existe na página atual.
-    // Isso garante que o código só tente carregar posts se estiver na página inicial.
+    // --- Carregamento Dinâmico de Posts na Página Inicial (index.html) ---
     const postsContainer = document.getElementById('posts-container');
 
     if (postsContainer) {
-        fetch('posts.json') // Certifique-se de que posts.json está na raiz do seu projeto
+        fetch('posts.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Erro ao carregar posts: ${response.status} ${response.statusText}`);
@@ -30,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const postCard = document.createElement('article');
                     postCard.classList.add('post-card');
                     postCard.innerHTML = `
-                        <h3><a href="post.html?id=${post.id}">${post.title}</a></h3>
+                        <h3><a href="posts/post.html?id=${post.id}">${post.title}</a></h3>
                         <p>${post.description}</p>
                         <small>Publicado em: ${post.date}</small>
                     `;
@@ -43,9 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // --- 3. Exibição de Conteúdo de Post Individual (post.html) ---
-    // Verifica se estamos na página 'post.html' para executar este bloco de código.
-    const isPostPage = window.location.pathname.includes('post.html') || window.location.pathname.includes('/post.html');
+    // --- Exibição de Conteúdo de Post Individual (posts/post.html) ---
+    const isPostPage = window.location.pathname.includes('post.html');
 
     if (isPostPage) {
         const params = new URLSearchParams(window.location.search);
@@ -56,9 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const postDate = document.getElementById('post-date');
         const postContent = document.getElementById('post-content');
 
-        // Somente tenta carregar se todos os elementos necessários e o postId existirem
         if (postId && postTitleTag && postHeading && postDate && postContent) {
-            fetch('posts.json')
+            fetch('../posts.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Erro ao carregar o post: ${response.status} ${response.statusText}`);
@@ -68,12 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(posts => {
                     const post = posts.find(p => p.id === postId);
                     if (post) {
-                        postTitleTag.textContent = `${post.title} - Meu Blog Incrível`;
+                        postTitleTag.textContent = `${post.title} - Blog do Dudu`;
                         postHeading.textContent = post.title;
                         postDate.textContent = `Publicado em: ${post.date}`;
-                        postContent.innerHTML = post.content; // Use innerHTML para renderizar o HTML do JSON
+                        postContent.innerHTML = post.content;
                     } else {
-                        // Caso o post não seja encontrado no JSON
                         postTitleTag.textContent = 'Post Não Encontrado';
                         postHeading.textContent = 'Post Não Encontrado';
                         postContent.innerHTML = '<p>Desculpe, o post que você procura não existe.</p>';
@@ -86,22 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     postContent.innerHTML = '<p>Ocorreu um erro ao carregar o conteúdo do post.</p>';
                 });
         } else if (!postId) {
-            // Caso não haja 'id' na URL
             postTitleTag.textContent = 'Post Não Especificado';
             postHeading.textContent = 'Nenhum Post Selecionado';
             postContent.innerHTML = '<p>Por favor, selecione um post para visualizar.</p>';
         }
     }
 
-    // --- 4. Rolagem Suave (Smooth Scrolling) para Links Internos ---
-    // Aplica a rolagem suave para todos os links que começam com '#'
+    // --- Rolagem Suave (Smooth Scrolling) para Links Internos ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Impede o "salto" instantâneo
-
+            e.preventDefault();
             const targetId = this.getAttribute('href');
             document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth' // Faz a rolagem ser suave
+                behavior: 'smooth'
             });
         });
     });
