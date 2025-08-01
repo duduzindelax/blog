@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Dudu - Início</title>
+    <meta name="description"
+        content="Bem-vindo ao Blog do Dudu! Aqui eu compartilho minha jornada no desenvolvimento de sistemas, dicas e o básico de programação para quem está começando.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1><a href="index.html">Blog do Dudu</a></h1>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="posts/sobre-mim.html">Sobre Mim</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="bio-section">
+            <img src="assets/images/foto-dudu.jpg" alt="Foto de Perfil do Dudu" class="profile-pic">
+            <div class="bio-text">
+                <h2>Olá, sou o Dudu!</h2>
+                <p>Sou apaixonado por tecnologia e tudo que envolve a criação na web. Atualmente, estou cursando
+                    **Desenvolvimento de Sistemas** e estou no terceiro ano!</p>
+                <p>Ainda não sei muito de programação, apenas o básico, mas sinto que posso repassar o que sei para
+                    vocês. Acredito que isso pode ajudar quem também está no início da jornada!</p>
+            </div>
+        </section>
+
+        <section class="latest-posts">
+            <h2>Últimas Publicações</h2>
+            <div id="posts-container" class="post-grid">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Blog do Dudu. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
