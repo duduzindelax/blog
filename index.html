@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog Incrível</title>
+    <title>Blog do Dudu - Início</title>
+    <meta name="description" content="Bem-vindo ao Blog do Dudu! Aqui eu compartilho minhas experiências, dicas e opiniões sobre tecnologia, música e desenvolvimento web.">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
-        <h1>Meu Blog Incrível</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="posts/sobre-mim.html">Sobre Mim</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1><a href="index.html">Blog do Dudu</a></h1>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="posts/sobre-mim.html">Sobre Mim</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+        </div>
     </header>
 
     <main>
+        <section class="bio-section">
+            <img src="assets/images/foto-dudu.jpg" alt="Foto de Perfil do Dudu" class="profile-pic">
+            <div class="bio-text">
+                <h2>Olá, sou o Dudu!</h2>
+                <p>Sou apaixonado por tecnologia e tudo que envolve a criação na web. Neste blog, você encontrará meus pensamentos, tutoriais e um pouco da minha jornada como desenvolvedor.</p>
+            </div>
+        </section>
+        
         <section class="latest-posts">
             <h2>Últimas Publicações</h2>
-            <article class="post-card">
-                <h3><a href="posts/meu-primeiro-post.html">Meu Primeiro Post!</a></h3>
-                <p>Uma breve descrição do meu primeiro post no blog. Fique ligado para mais!</p>
-                <small>Publicado em: 29 de julho de 2025</small>
-            </article>
+            <div id="posts-container" class="post-grid">
+                </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Meu Blog Incrível. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Blog do Dudu. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
