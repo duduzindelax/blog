@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Dudu - Início</title>
+    <meta name="description" content="Bem-vindo ao Blog do Dudu! Aqui eu compartilho minha jornada no desenvolvimento de sistemas, dicas e o básico de programação para quem está começando.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><a href="index.html">Blog do Dudu</a></h1>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="posts/sobre-mim.html">Sobre Mim</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="bio-section">
+            <img src="assets/images/foto-dudu.jpg" alt="Foto de Perfil do Dudu" class="profile-pic">
+            <div class="bio-text">
+                <h2>Olá, sou o Dudu!</h2>
+                <p>Sou apaixonado por tecnologia e tudo que envolve a criação na web. Atualmente, estou cursando **Desenvolvimento de Sistemas** e estou no terceiro ano!</p>
+                <p>Ainda não sei muito de programação, apenas o básico, mas sinto que posso repassar o que sei para vocês. Acredito que isso pode ajudar quem também está no início da jornada!</p>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h2>A Criação da Programação</h2>
+            <p>A história da programação não tem um único criador, mas sim uma evolução fascinante que começou muito antes do primeiro computador eletrônico.</p>
+            <p>A criação da programação é a história de como aprendemos a dar instruções detalhadas a uma máquina para que ela execute uma tarefa. Podemos dividir essa evolução em três grandes momentos.</p>
+
+            <h3>1. Os Primórdios: Instruções Mecânicas (Século XIX)</h3>
+            <p>O primeiro exemplo real de "programação" não foi em um computador, mas em um tear.</p>
+            <ul>
+                <li><strong>Tear de Jacquard (1801):</strong> Joseph Marie Jacquard inventou um tear que usava <strong>cartões perfurados</strong> para automatizar a criação de padrões complexos em tecidos. A posição dos furos nos cartões era o "código" que instruía a máquina a levantar ou abaixar os fios. Esta foi a primeira vez que um conjunto de instruções reutilizável (um programa) controlou uma máquina.</li>
+                <li><strong>Charles Babbage e Ada Lovelace (Década de 1840):</strong> Charles Babbage projetou o "Motor Analítico," um computador mecânico de uso geral. A matemática <strong>Ada Lovelace</strong>, ao estudar o projeto de Babbage, percebeu que a máquina poderia fazer muito mais do que apenas cálculos matemáticos. Ela escreveu o que é considerado o <strong>primeiro algoritmo</strong> da história, uma série de instruções para o Motor Analítico calcular números de Bernoulli. Por isso, ela é amplamente reconhecida como a primeira programadora do mundo.</li>
+            </ul>
+
+            <h3>2. A Era Eletrônica: Máquinas e Cabos (1940s)</h3>
+            <p>Com a invenção da eletrônica, a programação passou do mundo mecânico para o elétrico.</p>
+            <ul>
+                <li><strong>ENIAC (1946):</strong> O primeiro computador eletrônico de propósito geral, o ENIAC, era uma máquina gigante. "Programá-lo" não envolvia código, mas sim o ato físico de <strong>reorganizar centenas de cabos e chaves</strong>. Cada nova tarefa exigia um processo de reprogramação manual que podia levar dias.</li>
+            </ul>
+
+            <h3>3. O Nascimento da Programação Moderna (1950s)</h3>
+            <p>A grande revolução aconteceu quando programadores passaram a dar instruções à máquina usando linguagens de programação, em vez de cabos ou cartões.</p>
+            <ul>
+                <li><strong>Grace Hopper e o Compilador (1952):</strong> A cientista da computação <strong>Grace Hopper</strong> é uma figura central. Ela criou o <strong>primeiro compilador</strong>, um programa que traduzia uma linguagem mais próxima do inglês para a linguagem de máquina (binário) que o computador entendia. Isso eliminou a necessidade de programar em código binário (0s e 1s) ou com cabos.</li>
+                <li><strong>As Primeiras Linguagens de Programação:</strong> Com os compiladores, surgiram as primeiras linguagens de alto nível, como o <strong>FORTRAN</strong> (1957) para ciência, e o <strong>COBOL</strong> (1959), que Grace Hopper ajudou a desenvolver, para negócios.</li>
+            </ul>
+            <p>Em resumo, a programação não foi uma invenção única, mas uma evolução. Começou com a ideia de dar instruções a uma máquina através de cartões perfurados, foi aprimorada por Ada Lovelace com o primeiro algoritmo e, finalmente, se tornou o que conhecemos hoje graças a pioneiros como Grace Hopper, que criaram a ponte entre a linguagem humana e a máquina.</p>
+        </section>
+
+        <section class="latest-posts">
+            <h2>Últimas Publicações</h2>
+            <div id="posts-container" class="post-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Blog do Dudu. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
